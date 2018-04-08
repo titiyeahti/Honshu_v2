@@ -44,7 +44,7 @@ struct gameState {
     int jNouvelleTuile; /*!< La colonne où le joueur aimerait poser sa tuile. */
 
     Tuile tuileSelectionnee; /*!< La tuile sélectionnée par le joueur. */
-    int indiceTuileSelectionnee;
+    int indiceTuileSelectionnee; /*!< L'indice dans la main du joueur de la tuile sélectionnée */
 
     int largeur; /*!< La largeur du terminal */
     int hauteur; /*!< La hauteur du terminal */
@@ -73,12 +73,6 @@ enum touche
     Precedent = 97,  /*!< La touche \b a */
     Suivant = 122    /*!< La touche \b z */
 };
-
-/**
- * \brief Capture une touche sur l'entrée standard et la renvoie sous forme d'entier (sans afficher la frappe ni attendre l'appui sur Entrée)
- * \return Un entier correspondant à la touche frappée
- */
-/* int getch(); */
 
 /**
  * \author Thomas Kowalski

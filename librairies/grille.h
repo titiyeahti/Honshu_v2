@@ -95,7 +95,8 @@ typedef struct kase_n kase_n;
 
 struct tuile_posee{
 	Tuile t; /*!<La tuile (non posée) qui est posée*/
-	int i, j; /*!<Les coordonnées de la case en haut a gauche de la Tuile sur la Grille*/
+	int i; /*!< La ligne de la tuile posée */
+	int j; /*!< La colonne de la tuile posée */
 };
 
 typedef struct tuile_posee tuile_posee;
@@ -153,6 +154,7 @@ Grille nouvelle_grille_avec_tuile(int n);
 void free_grille(Grille g);
 
 /**
+ * \author Thomas Kowalski
  * \brief Renvoie la valeur de la case de coordonnées (\b i, \b j) dans la grille \b g.
  * Renvoie 0 si les coordonnées sont en dehors de la grille.
  * \param i abscisse discrete
@@ -164,12 +166,11 @@ void free_grille(Grille g);
 kase lecture_case(int i, int j, Grille g);
 
 /**
- * \brief Renvoie la valeur de la case de coordonnées (\b i, \b j) dans la grille \b g
- * Renvoie 0 si la coordonnée est en dehors de la grille.
- * \param i abscisse discrete
- * \param j ordonnée discrete
- * \param g Grille
- * \return la valeur de la case déterminée par les coordonnées
+ * \brief Renvoie la valeur d'une case de coordonnée donnée dans une grille.
+ * \author Thomas Kowalski
+ * \param \b k l'indice dans le tableau de la grille
+ * \param g la grille
+ * \return une \b kase correspondante.
  */
 kase lecture_case_brut(int k, Grille g);
 
@@ -254,7 +255,25 @@ int grille_to_file(char* path, Grille g, Tuile* main, int n, int tuileDepart);
  * \return Le nombre d'éléments du tableau
  */
 int village_associe(int* village, int i, int j, Grille g);
+
+/**
+ * \author Thomas Kowalski
+ * \brief Renvoie l'indice dans le tableau d'une grille correspondant à la case (i, j)
+ * \param i la ligne
+ * \param j la colonne
+ * \param g la grille
+ * \return k l'indice dans le tableau de la grille
+ */
 int coord_to_brut(int i, int j, Grille g);
+
+/**
+ * \author Thomas Kowalski
+ * \brief Vérifie si un élément est dans une liste d'entiers
+ * \param l la liste
+ * \param n la longueur de \b l
+ * \param x l'élément dont il faut tester la présence
+ * \return 0 ou 1
+ */
 int not_in_list(int* l, int n, int x);
 /**
  * \author Thomas Kowalski

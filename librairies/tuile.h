@@ -115,8 +115,8 @@ Tuile rand_tuile(void);
 /**
  * \author Thomas Kowalski
  * \brief Charge une tuile sérialisée depuis le fichier \b path.
- * \param \b path le chemin du fichier
- * \param \b tuilesImportees un pointeur vers un entier où le nombre de tuiles importées sera stocké
+ * \param path le chemin du fichier
+ * \param tuilesImportees un pointeur vers un entier où le nombre de tuiles importées sera stocké
  * \return un tableau de Tuile contenant les tuiles chargées depuis le fichier
  */
 Tuile* tuiles_from_file(char* path, int* tuilesImportees);
@@ -124,17 +124,17 @@ Tuile* tuiles_from_file(char* path, int* tuilesImportees);
 /**
  * \author Thomas Kowalski
  * \brief Sérialise la tuile \b t vers le fichier \b path.
- * \param \b path le fichier vers lequel exporter les tuiles
- * \param \b tuiles un tableau de tuiles à exporter
- * \param \b n le nombre de tuiles dans le tableau
+ * \param path le fichier vers lequel exporter les tuiles
+ * \param tuiles un tableau de tuiles à exporter
+ * \param n le nombre de tuiles dans le tableau
  */
 void exporter_tuiles(char* path, Tuile* tuiles, int n);
 
 /**
  * \author Thomas Kowalski
  * \brief Libère la mémoire allouée utilisée par \b tab
- * \param \b le tableau à libérer
- * \param \b n la longueur du tableau
+ * \param tab le tableau à libérer
+ * \param n la longueur du tableau
  */
 void free_tableau(Tuile* tab, int n);
 
